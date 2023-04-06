@@ -134,6 +134,10 @@ jobs:
       - run:
           name: Build package
           command: python -m build
+      - store_artifacts:
+          path: dist/
+          destination: dist
+
       - run:
           name: Publish package
           command: >
@@ -192,8 +196,3 @@ workflows:
             - test-python39
             - test-python310
             - analysis
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
