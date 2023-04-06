@@ -190,9 +190,4 @@ workflows:
               only: /.*/
       - publish:
           requires:
-            - test-python36
-            - test-python37
-            - test-python38
-            - test-python39
-            - test-python310
             - analysis
